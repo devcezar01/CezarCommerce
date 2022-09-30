@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CezarCOMMERCE</title>
+    <link rel="stylesheet" href="text.css">
+    <link rel="stylesheet" href="ecommerce.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="carousel.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://pets.v1tl.com/assets/web/js/jquery.mmenu.min.all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://pets.v1tl.com/assets/web/js/owl.carousel.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon" href="https://pets.v1tl.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <style type="text/css">
+        .allgrasccl{
+        -webkit-filter: grayscale(100%);
+          -moz-filter: grayscale(100%);
+          -ms-filter: grayscale(100%);
+          -o-filter: grayscale(100%);
+      }
+      
+      .add-tocartsoldout {
+        padding: 8px 0;
+        background: #ffd141;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 15px;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      
+      .add-tocartsoldout a {
+        font-size: 14px;
+        display: block;
+        font-weight: 500;
+      }
+      
+      .add-tocartsoldout a i {
+        font-size: 14px;
+        margin-right: 10px;
+      }
+      .item-card:hover .add-tocartsoldout {
+        opacity: 1;
+      }
+      .selectOptions{
+        height: 270px;
+      }
+      .popalrtbg{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .popalrtcnt{
+        width: 500px;
+        height: auto;
+        border: solid 10px #efefef;
+        background-color: #fff;
+        padding: 30px;
+        position: relative;
+      
+      }
+      .popalrthead{
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+      .popalrtdesc{
+        font-size: 12px;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 22px;
+      }
+      .closepopbtnalrt{
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .closepopbtnalrt a{
+        text-align: center;
+        color: #FFF;
+        border-radius: 100%;
+        padding: 10px;
+      }
+      </style>
+
+
+
+</head>
+<body>
+    
+<body class="down" style="margin-bottom: -18px !important;">
+
+
+           <!--  <div class="closenowdiv">
+        <div class="closehead">
+          Opening Hours        </div>
+        <div class="closedesc">
+          Our opening hours are: <br>Dinner: 03:30PM - 09:30PM        </div>
+        <div class="shopclise">
+          <a href="javascript:void()" onclick="closeshopclose()">CLOSE</a>
+        </div>
+      </div> -->
+      
+
+
+      <script>
+$(document).ready(function () {
+$(".header").before($(".header").clone().addClass("animateIt"));
+$(window).on("scroll", function () {
+$("body").toggleClass("down", ($(window).scrollTop() > 80));
+});
+});
+</script>
+<style type="text/css">
+    .cartcount{
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        background-color: #f3c10c;
+        color: #fff;
+        text-align: center;
+        line-height: 22px;
+        font-size: 9px;
+        font-weight: bold;
+        right: -6px;
+        top: 25px;
+        display: none;
+    }
+    .displblkwcrtcnt{
+        display: block;
+    }
+</style>
+
+
+
+<div class="header animateIt">
+   <div class="container">
+       
+     <div class="main-header-upper-part">
+        <span class="res-menu" onclick="openNav()">☰</span>
+
+        <div class="header-logo-holder">
+            <a href="https://pets.v1tl.com/"><img src="https://pets.v1tl.com//assets/web/images/logo/V1-Pet-Shop.png" alt=""></a>
+        </div>
+        <ul class="m-hide">
+                <li><a href="https://pets.v1tl.com/">Home</a></li>
+                <li class="hovedrop"><a class="dropcon" href="javascript:void(0)">About Us</a>
+                  <div class="dropmenu">
+                    <a class="" href="https://pets.v1tl.com/about-us">About Us</a>
+                    <a class="" href="https://pets.v1tl.com/team">Our Team</a>
+                    <a class="" href="https://pets.v1tl.com/video-gallery">Video Gallery</a>
+                    <a class="" href="https://pets.v1tl.com/photo-gallery">Photo Gallery</a>
+                  </div>
+               <!--  <li><a href="https://pets.v1tl.com/about-us">About Us</a></li> -->
+                </li><li><a href="https://pets.v1tl.com/items/dog-food">Shop Now</a></li>
+                
+                                     <li><a href="https://pets.v1tl.com/login/login">Book a VET</a></li>
+                                 
+                <li><a href="https://pets.v1tl.com/contact-us">Contact us</a></li>
+                
+ 
+
+ 
+
+
+                <!-- <li><a href="https://pets.v1tl.com/book-a-table/table">Book A Table</a></li> -->
+
+        </ul>
+        
+
+        <ul style="position: relative;">
+            <!-- <li><a href="https://pets.v1tl.com/items/starters-recipes">Order Now</a></li>
+            <li class="m-hide"><a href="tel:0123456789">Call Now: 0123456789</a></li> -->
+            <li><a href="https://pets.v1tl.com/login/login"><i class="fas fa-user"></i></a></li>
+            <li class="dropdown-cart">
+                <div id="cartcount" class="cartcount ">0</div>
+                <a href="https://pets.v1tl.com/cart"><i class="fas fa-shopping-cart"></i></a>
+                <div class="cart-item-on-hover">
+                    <ul id="topcartprdlist">
+                        
+                                                
+                    </ul>
+                    <div class="cart-sub-total">
+                        <span>Subtotal:</span>
+                        <strong id="topcrtsbttl">£0.00</strong>
+                    </div>
+                    <div class="cart-ho-buttons">
+                        <a href="https://pets.v1tl.com/cart">View Cart</a>
+                        <a href="https://pets.v1tl.com/cart">Checkout</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div><div class="header">
+   <div class="container">
+       
+     <div class="main-header-upper-part">
+        <span class="res-menu" onclick="openNav()">☰</span>
+
+        <div class="header-logo-holder">
+            <a href="https://pets.v1tl.com/"><img src="https://pets.v1tl.com//assets/web/images/logo/V1-Pet-Shop.png" alt=""></a>
+        </div>
+        <ul class="m-hide">
+                <li><a href="https://pets.v1tl.com/">Home</a></li>
+                <li class="hovedrop"><a class="dropcon" href="javascript:void(0)">About Us</a>
+                  <div class="dropmenu">
+                    <a class="" href="https://pets.v1tl.com/about-us">About Us</a>
+                    <a class="" href="https://pets.v1tl.com/team">Our Team</a>
+                    <a class="" href="https://pets.v1tl.com/video-gallery">Video Gallery</a>
+                    <a class="" href="https://pets.v1tl.com/photo-gallery">Photo Gallery</a>
+                  </div>
+               <!--  <li><a href="https://pets.v1tl.com/about-us">About Us</a></li> -->
+                </li><li><a href="https://pets.v1tl.com/items/dog-food">Shop Now</a></li>
+                
+                                     <li><a href="https://pets.v1tl.com/login/login">Book a VET</a></li>
+                                 
+                <li><a href="https://pets.v1tl.com/contact-us">Contact us</a></li>
+                
+ 
+
+ 
+
+
+                <!-- <li><a href="https://pets.v1tl.com/book-a-table/table">Book A Table</a></li> -->
+
+        </ul>
+        
+
+        <ul style="position: relative;">
+            <!-- <li><a href="https://pets.v1tl.com/items/starters-recipes">Order Now</a></li>
+            <li class="m-hide"><a href="tel:0123456789">Call Now: 0123456789</a></li> -->
+            <li><a href="https://pets.v1tl.com/login/login"><i class="fas fa-user"></i></a></li>
+            <li class="dropdown-cart">
+                <div id="cartcount" class="cartcount ">0</div>
+                <a href="https://pets.v1tl.com/cart"><i class="fas fa-shopping-cart"></i></a>
+                <div class="cart-item-on-hover">
+                    <ul id="topcartprdlist">
+                        
+                                                
+                    </ul>
+                    <div class="cart-sub-total">
+                        <span>Subtotal:</span>
+                        <strong id="topcrtsbttl">£0.00</strong>
+                    </div>
+                    <div class="cart-ho-buttons">
+                        <a href="https://pets.v1tl.com/cart">View Cart</a>
+                        <a href="https://pets.v1tl.com/cart">Checkout</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+
+<div class="what-in-cart" id="whatincart">
+    <ul>
+        <li><i class="fas fa-check-circle"></i><span id="justaddnenow"></span></li>
+        <li><a href="https://pets.v1tl.com/cart">View Cart</a><i class="fas fa-times-circle"></i></li>
+    </ul>
+</div>  <div class="banner">
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <!--   <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul> -->
+
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+                  <div class="carousel-item">
+            <img src="eCommerce-concch.jpg" alt="V1 Pet Supplies" height="100px">
+          </div>
+                  <div class="carousel-item">
+            <img src="https://pets.v1tl.com/uploads/banner/banner_97085banner_74661banner_30870v1-pe-supplier-banner-1200x400-6.jpg" alt="V1 Pet Supplies">
+          </div>
+                  <div class="carousel-item active">
+            <img src="https://pets.v1tl.com/uploads/banner/banner_901banner_79215banner_73786v1-pe-supplier-banner-1200x400-5.jpg" alt="V1 Pet Supplies">
+          </div>
+              </div>
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+    <div class="banner_content">
+      <h6>We Keep Pets For Pleasure</h6>
+      <h1>Helping Your Pets Get Rid Of Annoying Pets.</h1>
+      <h4>You can do anything here. So don't worry about it. In your world you can create.</h4>
+      <div class="readmore_button">
+        <a href="https://pets.v1tl.com/items/starters-recipes">SHOP NOW</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="category_main">
+    <div class="container">
+      <div class="category_segment">
+        <ul class="nav nav-tabs catcastmnv" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="DogFood-tab" data-toggle="tab" href="#DogFood" role="tab" aria-controls="DogFood" aria-selected="true">
+              <div class="cat_box">
+                <div class="cat_img">
+                  <img src="imagens/caçorro comeno.jpg" alt="">
+                </div>
+                <div class="cat_desk">Dog Food</div>
+              </div>
+            </a>
+          </li>
+         
+
+                  <li class="nav-item" role="presentation">
+            <a class="nav-link " id="DogHealthcare-tab" data-toggle="tab" href="#DogHealthcare" role="tab" aria-controls="DogHealthcare" aria-selected="false">
+              <div class="cat_box">
+                <div class="cat_img">
+                  <img src="imagens/caçorro olhando.jpg" alt="">
+                </div>
+                <div class="cat_desk">Dog Healthcare</div>
+              </div>
+            </a>
+          </li>
+         
+
+                  <li class="nav-item" role="presentation">
+            <a class="nav-link " id="DogAccessories-tab" data-toggle="tab" href="#DogAccessories" role="tab" aria-controls="DogAccessories" aria-selected="false">
+              <div class="cat_box">
+                <div class="cat_img">
+                  <img src="imagens/cato estranho.jpg" alt="">
+                </div>
+                <div class="cat_desk">Dog Accessories</div>
+              </div>
+            </a>
+          </li>
+         
+
+                  <li class="nav-item" role="presentation">
+            <a class="nav-link " id="Cat-tab" data-toggle="tab" href="#Cat" role="tab" aria-controls="Cat" aria-selected="false">
+              <div class="cat_box">
+                <div class="cat_img">
+                  <img src="imagens/cato sentado.jpg" alt="">
+                </div>
+                <div class="cat_desk">Cat</div>
+              </div>
+            </a>
+          </li>
+         
+
+                  <li class="nav-item" role="presentation">
+            <a class="nav-link " id="Fish-tab" data-toggle="tab" href="#Fish" role="tab" aria-controls="Fish" aria-selected="false">
+              <div class="cat_box">
+                <div class="cat_img">
+                  <img src="https://pets.v1tl.com/uploads/category/menu_34112animal-g58cc8d03a_640.jpg" alt="">
+                </div>
+                <div class="cat_desk">Fish</div>
+              </div>
+            </a>
+          </li>
+         
+
+              </ul>
+    </div>
+    <div class="bottom_nav">
+      <a href="javascript:void(0)" class="" id="previousimage"><i class="fas fa-chevron-left"></i></a>
+      <a href="javascript:void(0)" class="" id="nextimage"><i class="fas fa-chevron-right"></i></a>
+    </div>
+    
+        
+
+
+    <div class="main_heading">
+      <img src="https://pets.v1tl.com/assets/web/images/icon/150x150-pet-icon.png" alt="">
+      <h2 class="mheading">Trending Products</h2>
+    </div>
+    
+    <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade show active" id="DogFood" role="tabpanel" aria-labelledby="DogFood-tab">
+        <div class="row">
+
+          <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable1">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-21.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                   AATU Dry Dog Food Economy Packs 2 x 10kg - 80/20 Salmon                                  </h2>
+                <div class="item-desc">
+                                    <div class="item-test" onclick="openalleryalert('');">
+                                        <img src="https://pets.v1tl.com//uploads/foodcontain/alchohol.png" alt="V1 Pet Supplies Food Chilly Lebel">
+                                        <img src="https://pets.v1tl.com//uploads/foodcontain/lupin.png" alt="V1 Pet Supplies Food Chilly Lebel">
+                                        <img src="https://pets.v1tl.com//uploads/foodcontain/alchohol.png" alt="V1 Pet Supplies Food Chilly Lebel">
+                                      </div>
+                                    <p>AATU has developed an evolutionary natural feeding</p>
+                  <h3 class="item-price">
+                                        £10.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_1">
+                            <a onclick="addTocart('1')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_1">
+                      <span class="leftminus" onclick="minusqty('1');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_1"></span>
+                      <span class="rihgtplus" onclick="plusqty('1');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-21.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4> AATU Dry Dog Food Economy Packs 2 x 10kg - 80/20 Salmon</h4>
+                                <div class="item-test" onclick="openalleryalert('');">
+                                        <img src="https://pets.v1tl.com//uploads/foodcontain/alchohol.png" alt="V1 Pet Supplies Food Chilly Lebel">
+                                        <img src="https://pets.v1tl.com//uploads/foodcontain/lupin.png" alt="V1 Pet Supplies Food Chilly Lebel">
+                                        <img src="https://pets.v1tl.com//uploads/foodcontain/alchohol.png" alt="V1 Pet Supplies Food Chilly Lebel">
+                                      </div>
+                                <p>AATU has developed an evolutionary natural feeding formula for dogs. </p>
+              <h6>
+                                        £10.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+                  <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable7">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-1.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Adult Dog Food 15kg                                  </h2>
+                <div class="item-desc">
+                                    <p>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Ad</p>
+                  <h3 class="item-price">
+                                        £56.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_7">
+                            <a onclick="addTocart('7')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_7">
+                      <span class="leftminus" onclick="minusqty('7');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_7"></span>
+                      <span class="rihgtplus" onclick="plusqty('7');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable7" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-1.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Adult Dog Food 15kg</h4>
+                            <p>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Adult Dog Food contains 75% meat, and does not contain cheaper additives like cereal no grains to bulk up the food. High protein, meat based diets are the natural and healthy way to feed your dog as they are easier to digest than other diets with large proportions of grains and cereals which can lead them to have a high carbohydrate intake and potential weight issues</p>
+              <h6>
+                                        £56.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+                  <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable8">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dog-Treats-1.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Adult Dog Food 7.5kg                                  </h2>
+                <div class="item-desc">
+                                    <p>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Ad</p>
+                  <h3 class="item-price">
+                                        £31.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_8">
+                            <a onclick="addTocart('8')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_8">
+                      <span class="leftminus" onclick="minusqty('8');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_8"></span>
+                      <span class="rihgtplus" onclick="plusqty('8');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable8" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dog-Treats-1.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Adult Dog Food 7.5kg</h4>
+                            <p>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Adult Dog Food contains 75% meat, and does not contain cheaper additives like cereal no grains to bulk up the food. High protein, meat based diets are the natural and healthy way to feed your dog as they are easier to digest than other diets with large proportions of grains and cereals which can lead them to have a high carbohydrate intake and potential weight issues.</p>
+              <h6>
+                                        £31.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+                  <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable9">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-2.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Applaws Chicken Small &amp; Medium Breed Dry Adult Dog Food 15kg                                  </h2>
+                <div class="item-desc">
+                                    <p>Applaws Chicken Small &amp; Medium Breed Dry Adult Dog</p>
+                  <h3 class="item-price">
+                                        £15.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_9">
+                            <a onclick="addTocart('9')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_9">
+                      <span class="leftminus" onclick="minusqty('9');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_9"></span>
+                      <span class="rihgtplus" onclick="plusqty('9');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable9" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-2.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Applaws Chicken Small &amp; Medium Breed Dry Adult Dog Food 15kg</h4>
+                            <p>Applaws Chicken Small &amp; Medium Breed Dry Adult Dog Food contains 75% meat, and does not contain cheaper additives like cereal no grains to bulk up the food. High protein, meat based diets are the natural and healthy way to feed your dog as they are easier to digest than other diets with large proportions of grains and cereals which can lead them to have a high carbohydrate intake and potential weight issues.</p>
+              <h6>
+                                        £15.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+                  <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable10">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dog-Treats-11.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Applaws Chicken Small &amp; Medium Breed Dry Adult Dog Food                                   </h2>
+                <div class="item-desc">
+                                    <p>Applaws Chicken Small &amp; Medium Breed Dry Adult Dog</p>
+                  <h3 class="item-price">
+                                        £40.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_10">
+                            <a onclick="addTocart('10')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_10">
+                      <span class="leftminus" onclick="minusqty('10');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_10"></span>
+                      <span class="rihgtplus" onclick="plusqty('10');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable10" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dog-Treats-11.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Applaws Chicken Small &amp; Medium Breed Dry Adult Dog Food </h4>
+                            <p>Applaws Chicken Small &amp; Medium Breed Dry Adult Dog Food contains 75% meat, and does not contain cheaper additives like cereal no grains to bulk up the food. High protein, meat based diets are the natural and healthy way to feed your dog as they are easier to digest than other diets with large proportions of grains and cereals which can lead them to have a high carbohydrate intake and potential weight issues</p>
+              <h6>
+                                        £40.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+         
+        </div>
+      </div>
+
+          <div class="tab-pane fade" id="DogHealthcare" role="tabpanel" aria-labelledby="DogHealthcare-tab">
+        <div class="row">
+
+          <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable2">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dog-Treats-12.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Adaptil Calming On The Go Dog Collar                                  </h2>
+                <div class="item-desc">
+                                    <p>The Adaptil Calming Collar is a discrete collar th</p>
+                  <h3 class="item-price">
+                                        £20.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_2">
+                            <a onclick="addTocart('2')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_2">
+                      <span class="leftminus" onclick="minusqty('2');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_2"></span>
+                      <span class="rihgtplus" onclick="plusqty('2');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable2" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dog-Treats-12.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Adaptil Calming On The Go Dog Collar</h4>
+                            <p>The Adaptil Calming Collar is a discrete collar that steadily releases appeasing pheromones to calm your dog down and ease them into new and stressful situations such as house training a puppy</p>
+              <h6>
+                                        £20.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+         
+        </div>
+      </div>
+
+          <div class="tab-pane fade" id="DogAccessories" role="tabpanel" aria-labelledby="DogAccessories-tab">
+        <div class="row">
+
+          <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable3">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-11.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Banbury &amp; Co Luxury Cosy Dog Bed                                  </h2>
+                <div class="item-desc">
+                                    <p>The Banbury Luxury Cosy Dog Bed is sure to provide</p>
+                  <h3 class="item-price">
+                                        £30.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_3">
+                            <a onclick="addTocart('3')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_3">
+                      <span class="leftminus" onclick="minusqty('3');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_3"></span>
+                      <span class="rihgtplus" onclick="plusqty('3');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable3" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-11.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Banbury &amp; Co Luxury Cosy Dog Bed</h4>
+                            <p>The Banbury Luxury Cosy Dog Bed is sure to provide your dog with a comfortable and snug nights sleep.</p>
+              <h6>
+                                        £30.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+         
+        </div>
+      </div>
+
+          <div class="tab-pane fade" id="Cat" role="tabpanel" aria-labelledby="Cat-tab">
+        <div class="row">
+
+          <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable4">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-22.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Applaws Chicken Dry Adult Cat Food                                  </h2>
+                <div class="item-desc">
+                                    <p>Applaws Chicken Dry Adult Cat Food</p>
+                  <h3 class="item-price">
+                                        £12.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_4">
+                            <a onclick="addTocart('4')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_4">
+                      <span class="leftminus" onclick="minusqty('4');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_4"></span>
+                      <span class="rihgtplus" onclick="plusqty('4');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable4" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dry-Dog-Food-22.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Applaws Chicken Dry Adult Cat Food</h4>
+                            <p>Applaws Chicken Dry Adult Cat Food</p>
+              <h6>
+                                        £12.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+                  <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable5">
+                                    <img src="https://pets.v1tl.com//uploads/products/Dog-Bowls.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Applaws  Dry Adult Wet Cat Food                                  </h2>
+                <div class="item-desc">
+                                    <p>3kg Concept for Life Dry Food + 24 x 85g Wet Food </p>
+                  <h3 class="item-price">
+                                        £30.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_5">
+                            <a onclick="addTocart('5')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_5">
+                      <span class="leftminus" onclick="minusqty('5');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_5"></span>
+                      <span class="rihgtplus" onclick="plusqty('5');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable5" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Dog-Bowls.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Applaws  Dry Adult Wet Cat Food</h4>
+                            <p>3kg Concept for Life Dry Food + 24 x 85g Wet Food in Gravy - All Cats Mixed Pack</p>
+              <h6>
+                                        £30.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+         
+        </div>
+      </div>
+
+          <div class="tab-pane fade" id="Fish" role="tabpanel" aria-labelledby="Fish-tab">
+        <div class="row">
+
+          <div class="col-md-3">
+              <div class="tab_cart ">
+
+                <div class="item-image customer-itm-img" style="text-align: center;" data-toggle="modal" data-target="#exampleModalScrollable6">
+                                    <img src="https://pets.v1tl.com//uploads/products/Fish-Tank-Heater.jpg" alt="">
+                </div>
+                <h2 class="item-name">
+                  Fish &amp; Co Luxury                                    </h2>
+                <div class="item-desc">
+                                    <p>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Ad</p>
+                  <h3 class="item-price">
+                                        £40.00                  </h3>
+                  
+                  
+                    
+                          <div class="add-tocart " id="home_pro_add_6">
+                            <a onclick="addTocart('6')"><i class="fas fa-shopping-bag"></i>Add to Cart</a>
+                          </div>
+                      
+                    <div class="addqtyhome " id="home_pro_qty_6">
+                      <span class="leftminus" onclick="minusqty('6');"><i class="fas fa-minus"></i></span>
+                      <span class="actualqty" id="home_pro_qty_value_6"></span>
+                      <span class="rihgtplus" onclick="plusqty('6');"><i class="fas fa-plus"></i></span>
+                      <div class="clearfix"></div>
+                    </div>
+                  
+
+
+                </div>
+              </div>
+            </div>  
+
+
+     <style>
+      .down.modal-open{
+        padding-right: 0 !important;
+
+      }
+      .down.modal-open .modal.fade.pro-model.show{
+        padding-right: 0 !important;
+      }
+      body{
+        overflow: auto !important ;
+      }
+     </style>       
+
+<div class="modal fade pro-model" id="exampleModalScrollable6" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="padding-right:0px !important;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5> -->
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pro_modalimg">
+              <img src="https://pets.v1tl.com//uploads/products/Fish-Tank-Heater.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pro_modaldesc">
+              <h4>Fish &amp; Co Luxury  </h4>
+                            <p>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Adult Dog Food contains 75% meat, and does not contain cheaper additives like cereal no grains to bulk up the food. </p>
+              <h6>
+                                        £40.00                  </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+         
+        </div>
+      </div>
+
+    
+      
+
+    </div>
+
+
+  </div>
+</div>
+
+<div class="banner_ads">
+  <div class="container">
+    <div class="row">
+           
+    </div>
+  </div>
+</div>
+
+<div class="pet_paralax">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-6">
+          <div class="para_text">
+            <h2>Want a pet for your loved ones?</h2>
+            <p>Applaws Chicken &amp; Lamb Small &amp; Medium Breed Dry Adult Dog Food contains 75% meat, and does not contain cheaper additives like cereal no grains to bulk up the food.</p>
+            <div class="readmore_button">
+              <a href="https://pets.v1tl.com/items/dog-food">Read More</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="pet_blog">
+  <div class="container">
+    <div class="main_heading">
+      <img src="https://pets.v1tl.com/assets/web/images/icon/150x150-pet-icon.png" alt="">
+      <h2 class="mheading">Latest News</h2>
+    </div>
+    <div class="row">
+
+            <div class="col-md-6">
+        <div class="blogg_box">
+            <div class="row no-gutters">
+              <div class="col-md-6">
+                <div class="bbox_img">
+                  <img src="https://pets.v1tl.com//uploads/blogs/team_67745team_94590blog-274x333-img-2.jpg" title="Upon of seasons earth" alt="">
+                </div>
+              </div>
+              <div class="col-md-6 align-self-center">
+                <div class="bbox_text">
+                  <h4><span><i class="far fa-calendar-alt"></i> Thu, 11-Nov-2021</span></h4>
+                  <h5>Upon of seasons earth</h5>
+                  <p></p><p>There are many variations of passages of Lorem ....</p>
+                  <div class="readmore_buttonsm">
+                    <a href="https://pets.v1tl.com/blog/upon-of-seasons-earth">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+          <div class="col-md-6">
+        <div class="blogg_box">
+            <div class="row no-gutters">
+              <div class="col-md-6">
+                <div class="bbox_img">
+                  <img src="https://pets.v1tl.com//uploads/blogs/team_77690team_31274blog-274x333-img-1.jpg" title="Upon of seasons earth" alt="Upon of seasons earth">
+                </div>
+              </div>
+              <div class="col-md-6 align-self-center">
+                <div class="bbox_text">
+                  <h4><span><i class="far fa-calendar-alt"></i> Thu, 05-Nov-2020</span></h4>
+                  <h5>Upon of seasons earth</h5>
+                  <p></p><p>There are many variations of passages of Lorem ....</p>
+                  <div class="readmore_buttonsm">
+                    <a href="https://pets.v1tl.com/blog/upon-of-seasons-earths">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+         
+    </div>
+  </div>
+</div>
+
+
+
+
+  <section class="testymonial">
+    <div class="main_heading">
+      <img src="https://pets.v1tl.com/assets/web/images/icon/150x150-pet-icon.png" alt="">
+      <h2 class="mheading">Testimonial</h2>
+    </div>
+    <div class="container over-flow-hidden">
+      <div class="home-demo">
+          <div class="large-12 columns">
+            <div class="owl-carousel owl-carousel1 castom-testymonial owl-loaded owl-drag">
+
+                            
+                          <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-520px, 0px, 0px); transition: all 0s ease 0s; width: 1300px;"><div class="owl-item cloned" style="width: 250px; margin-right: 10px;"><div class="item">
+                <!-- <div class="testymonial-pic">
+                  <img src="https://pets.v1tl.com//assets/web/images/demo4-2859002025-1-55x55.jpg" alt="">
+                </div> -->
+                <div class="testymonial-cntnt">
+                  <div class="qte_box"><i class="fas fa-quote-left"></i></div>
+                  <div class="qte"><i class="fas fa-bacon"></i></div>
+                  <div class="center_testi">
+                    <h3>Subhajit                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>                    <small>- 27 day(s) ago</small></h3>
+                    <span>good</span>
+                  </div>
+                  
+                    
+
+
+
+                </div>
+              </div></div><div class="owl-item cloned" style="width: 250px; margin-right: 10px;"><div class="item">
+                <!-- <div class="testymonial-pic">
+                  <img src="https://pets.v1tl.com//assets/web/images/demo4-2859002025-1-55x55.jpg" alt="">
+                </div> -->
+                <div class="testymonial-cntnt">
+                  <div class="qte_box"><i class="fas fa-quote-left"></i></div>
+                  <div class="qte"><i class="fas fa-bacon"></i></div>
+                  <div class="center_testi">
+                    <h3>Subhajit                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>                    <small>- 27 day(s) ago</small></h3>
+                    <span>good</span>
+                  </div>
+                  
+                    
+
+
+
+                </div>
+              </div></div><div class="owl-item active" style="width: 250px; margin-right: 10px;"><div class="item">
+                <!-- <div class="testymonial-pic">
+                  <img src="https://pets.v1tl.com//assets/web/images/demo4-2859002025-1-55x55.jpg" alt="">
+                </div> -->
+                <div class="testymonial-cntnt">
+                  <div class="qte_box"><i class="fas fa-quote-left"></i></div>
+                  <div class="qte"><i class="fas fa-bacon"></i></div>
+                  <div class="center_testi">
+                    <h3>Subhajit                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>                    <small>- 27 day(s) ago</small></h3>
+                    <span>good</span>
+                  </div>
+                  
+                    
+
+
+
+                </div>
+              </div></div><div class="owl-item cloned active" style="width: 250px; margin-right: 10px;"><div class="item">
+                <!-- <div class="testymonial-pic">
+                  <img src="https://pets.v1tl.com//assets/web/images/demo4-2859002025-1-55x55.jpg" alt="">
+                </div> -->
+                <div class="testymonial-cntnt">
+                  <div class="qte_box"><i class="fas fa-quote-left"></i></div>
+                  <div class="qte"><i class="fas fa-bacon"></i></div>
+                  <div class="center_testi">
+                    <h3>Subhajit                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>                    <small>- 27 day(s) ago</small></h3>
+                    <span>good</span>
+                  </div>
+                  
+                    
+
+
+
+                </div>
+              </div></div><div class="owl-item cloned" style="width: 250px; margin-right: 10px;"><div class="item">
+                <!-- <div class="testymonial-pic">
+                  <img src="https://pets.v1tl.com//assets/web/images/demo4-2859002025-1-55x55.jpg" alt="">
+                </div> -->
+                <div class="testymonial-cntnt">
+                  <div class="qte_box"><i class="fas fa-quote-left"></i></div>
+                  <div class="qte"><i class="fas fa-bacon"></i></div>
+                  <div class="center_testi">
+                    <h3>Subhajit                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>                    <small>- 27 day(s) ago</small></h3>
+                    <span>good</span>
+                  </div>
+                  
+                    
+
+
+
+                </div>
+              </div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots disabled"><button role="button" class="owl-dot active"><span></span></button></div></div>
+          </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="footer-parts logo-footer">
+                    <img src="https://pets.v1tl.com//assets/web/images/logo-white.png" alt="">
+                    <div class="contact-no">
+                        <i class="fas fa-phone-volume"></i>
+                        0123456789                    </div>
+                    <p>123 Street, A/B New Town US<br>YO12 3UR</p>
+                    
+
+                    <div class="footer-social">
+                        <ul>
+                                                            <li><a href="https://www.facebook.com/yourwebsite/" target="_blank"><img src="https://pets.v1tl.com//assets/web/images/facebook.png" alt=""></a></li>
+                                                                                        <li><a href="https://twitter.com/yourwebsite" target="_blank"><img src="https://pets.v1tl.com//assets/web/images/twitter.png" alt=""></a></li>
+                                                                                        <li><a href="https://www.instagram.com/yourwebsite/" target="_blank"><img src="https://pets.v1tl.com//assets/web/images/instagram.png" alt=""></a></li>
+                                                                                        <li><a href="https://uk.trustpilot.com/review/yourwebsite" target="_blank"><img src="https://pets.v1tl.com//assets/web/images/trustpilot.png" alt=""></a></li>
+                                                                                        <li><a href="https://www.tripadvisor.in/yourwebsite" target="_blank"><img src="https://pets.v1tl.com//assets/web/images/tripadvisor.png" alt=""></a></li>
+                                                                                        <li><a href="https://g.page/yourwebsite" target="_blank"><img src="https://pets.v1tl.com//assets/web/images/googlemybusiness.png" alt=""></a></li>
+                                                                                                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="footer-parts">
+                    <h4>Our Menu</h4>
+                    <ul>
+                                                    <li><a href="https://pets.v1tl.com/items/dog-food">Dog Food</a></li>
+                                                    <li><a href="https://pets.v1tl.com/items/dog-healthcare">Dog Healthcare</a></li>
+                                                    <li><a href="https://pets.v1tl.com/items/dog-accessories">Dog Accessories</a></li>
+                                                    <li><a href="https://pets.v1tl.com/items/cat">Cat</a></li>
+                                                    <li><a href="https://pets.v1tl.com/items/fish">Fish</a></li>
+                                                
+                    </ul>
+                </div>
+            </div>
+             <div class="col-md-2">
+                <div class="footer-parts">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="https://pets.v1tl.com/about-us">About V1 Pet Supplies</a></li>
+                        <li><a href="https://pets.v1tl.com/contact-us">Contact Us</a></li>
+                        <li><a href="https://pets.v1tl.com/blogs">Blog</a></li>
+                        <li><a href="https://pets.v1tl.com/team">Our Team</a></li>
+                        <li><a href="https://pets.v1tl.com/video-gallery">Video Gallery</a></li>
+                        <li><a href="https://pets.v1tl.com/photo-gallery">Photo Gallery</a></li>
+                        <li><a href="https://pets.v1tl.com/areas-covered">Areas Covered</a></li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="col-md-3">
+                <div class="footer-parts">
+                    <h4>Helpful Information</h4>
+                    <ul>
+                        <li><a href="https://pets.v1tl.com/terms-and-conditions">Terms and Conditions</a></li>
+                        <li><a href="https://pets.v1tl.com/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="https://pets.v1tl.com/allergen-table">Allergen Table</a></li>
+                        <li><a href="https://pets.v1tl.com/allergy-advice">Allergy Advice</a></li>
+                        <li><a href="https://pets.v1tl.com/delivery-information">Delivery Information</a></li>
+                        <li><a href="https://pets.v1tl.com/payments-refunds">Payments &amp; Refunds</a></li>
+                        <li><a href="https://pets.v1tl.com/catering-events">Catering &amp; Events</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="cpwerdyb">
+                    We are currently NOT doing collection. It is a home delivery service only. With the overwhelming response we are receiving, we will soon be opening a retail unit.<br>
+                    Powered by <a href="WEBSITE_URL" target="_blank">V1 Pet Supplies</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+    <div class="nav-logo-holder">
+        <img src="https://pets.v1tl.com//assets/web/images/logo/V1-Pet-Shop.png" alt="">
+    </div>
+
+      <ul class="res-menu-side">
+                        <li><a href="https://pets.v1tl.com/about-us">About V1 Pet Supplies</a></li>
+                        <li><a href="https://pets.v1tl.com/contact-us">Contact Us</a></li>
+                        <li><a href="https://pets.v1tl.com/blogs">Blog</a></li>
+                        <li><a href="https://pets.v1tl.com/team">Our Team</a></li>
+                        <li><a href="https://pets.v1tl.com/video-gallery">Video Gallery</a></li>
+                        <li><a href="https://pets.v1tl.com/photo-gallery">Photo Gallery</a></li>
+                        <li><a href="https://pets.v1tl.com/areas-covered">Areas Covered</a></li>
+                    </ul>
+   
+</div>
+<script>
+function openNav() {
+document.getElementById("mySidenav").style.width = "250px";
+}
+function closeNav() {
+document.getElementById("mySidenav").style.width = "0";
+}
+
+function opensubmenu(){
+$('#submenuleft').toggle('slow');
+}
+</script>
+<input type="hidden" id="selectedvrtnid">
+<input type="hidden" id="selectedvrtnprice">
+
+<input type="hidden" id="selectedoptid">
+<input type="hidden" id="selectedoptprice">
+
+
+<input type="hidden" id="selectedmldlid">
+<input type="hidden" id="selectedmldlprice">
+
+<input type="hidden" id="itmsltdid">
+<input type="hidden" id="totalitmprc">
+  <script src="https://github.com/devcezar01"></script>
+  <script>
+    var owl = $('.owl-carousel1');
+    owl.owlCarousel({
+      margin: 10,
+      loop: true,
+      autoplay:true,
+      autoplayTimeout:2000,
+      autoplayHoverPause:true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        }
+      }
+    })
+  </script>
+
+
+
+  <script>
+    var owl = $('.owl-carousel2');
+    owl.owlCarousel({
+      margin: 10,
+      loop: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        300: {
+          items: 2
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+
+
+    function addTocart(val){
+    $('#home_pro_add_'+val).hide();
+    $('#home_pro_qty_'+val).show();
+    $('#home_pro_qty_value_'+val).html(1);
+
+    $.ajax({
+        type:'POST',
+        data:{prdid:val},
+        url:'#',
+        success:function(data){
+          var result = JSON.parse(data);
+          $('#cartcount').show();
+          $('#cartcount').html(result.count);
+          
+          $('#justaddnenow').html('"'+result.name+'" has been added to your cart.');
+          $('#whatincart').show();
+          setTimeout(function(){ $('#whatincart').hide(); }, 3000);
+          var crtprd = result.cartitm;
+          var crtlst = '';
+          for (pr in crtprd){
+            crtlst += '<li><div><img src="#'+crtprd[pr].image+'" alt=""></div><div class="item-details-cart"><h3 class="item-name-cart">'+crtprd[pr].qty+'x '+crtprd[pr].name+'</h3><h5>'+crtprd[pr].subtotal+'</h5></div></li>';
+          }
+          console.log(crtlst);
+          $('#topcartprdlist').html(crtlst);
+          $('#topcrtsbttl').html(''+result.cartsbtl);
+        },
+    });
+  }
+
+  function addTocartChoose(val, mldlcnt){
+    // console.log('val', val);
+    var mldlids = $('#selectedmldlid').val();
+
+    
+    var mealdeal = [];
+    $('.mldlgetval_'+val).each(function(index, elem){
+      // console.log(elem);
+        var mldchk = $(elem).find('.mldchk_'+val).val(); 
+        var mld_max = $(elem).find('.mld_max_'+val).val(); 
+        var mld_min = $(elem).find('.mld_min_'+val).val(); 
+        var mld_ctnm = $(elem).find('.mld_ctnm_'+val).val();
+        var ary = {
+          no_of_chk: mldchk,
+          max_qty: mld_max,
+          min_qty: mld_min,
+          cat_name: mld_ctnm
+        }
+        mealdeal.push(ary);
+        console.log(mealdeal);
+    });
+
+    let isAllChecked = '';
+    if(mldlcnt > 0){
+      if(mldlids){
+        for(let m=0; m < mealdeal.length; m++){
+          let no_of_chk = mealdeal[m].no_of_chk;
+          if(no_of_chk < mealdeal[m].min_qty && mealdeal[m].min_qty > 0){
+            swal('Error:', 'POr favor, escolha minimo '+mealdeal[m].min_qty+' from '+mealdeal[m].cat_name);
+            isAllChecked += 'NO,';
+            break;
+          }
+          if(no_of_chk > mealdeal[m].max_qty && mealdeal[m].max_qty > 0){
+            swal('Error:', 'Você pode escolher máximo'+mealdeal[m].max_qty+' from '+mealdeal[m].cat_name);
+            isAllChecked += 'NO,';
+            break;
+          }
+          if(mealdeal[m].max_qty == 0){
+            isAllChecked += 'OK,';
+          }
+          if(mealdeal[m].max_qty > 0 && no_of_chk > 0){
+            isAllChecked += 'OK,';
+          }
+          if(mealdeal[m].max_qty > 0 && no_of_chk == 0){
+            swal('Error:', 'Por favor, escolha o item de '+mealdeal[m].cat_name);
+            isAllChecked += 'NO,';
+            break;
+          }
+        }
+
+        var chkAry = isAllChecked.split(',');
+        var isnoVld = chkAry.indexOf("NO");
+        if(isnoVld < 0){
+          addtocartchoise(val);
+          console.log('Adicionar cartao');
+        }
+
+      } else {
+        swal("Info:", 'Escolha uma opção');
+      }
+    } else {
+      addtocartchoise(val);
+    }
+  }
+
+
+  function addtocartchoise(val){
+    var vrtnid = $('#selectedvrtnid').val();
+    var optnids = $('#selectedoptid').val();
+    var mldlids = $('#selectedmldlid').val();
+
+    $.ajax({
+        type:'POST',
+        data:{prdid:val, vrtnid:vrtnid, optnids:optnids, mldlids:mldlids},
+        url:'#',
+        success:function(data){
+          var result = JSON.parse(data);
+          $('.cartcount').show();
+          $('.cartcount').html(result.count);
+          
+          $('.justaddnenow').html('"'+result.name+'" has been added to your cart.');
+          $('#whatincart').show();
+          setTimeout(function(){ $('#whatincart').hide(); }, 3000);
+          var crtprd = result.cartitm;
+          var crtlst = '';
+          for (pr in crtprd){
+            crtlst += '<li><div><img src="#'+crtprd[pr].image+'" alt=""></div><div class="item-details-cart"><h3 class="item-name-cart">'+crtprd[pr].qty+'x '+crtprd[pr].name+'</h3><h5>'+crtprd[pr].subtotal+'</h5></div></li>';
+          }
+          console.log(crtlst);
+          $('.topcartprdlist').html(crtlst);
+          $('.topcrtsbttl').html(''+result.cartsbtl);
+          location.reload();
+        },
+    });
+  }
+    function minusqty(val) {
+      var exsitval = $('#home_pro_qty_value_' + val).html();
+      if (exsitval == 1) {
+        $('#home_pro_add_' + val).show();
+        $('#home_pro_qty_' + val).hide();
+      }
+      var nowval = parseInt(exsitval) - 1;
+      $('#home_pro_qty_value_' + val).html(nowval);
+
+      $.get("welcome/updatecart/" + val + "/" + nowval)
+        .done(function (data) {
+          console.log(data);
+          var result = JSON.parse(data);
+          if (result.count > 0) {
+            $('#cartcount').show();
+          } else {
+            $('#cartcount').hide();
+          }
+
+          $('#cartcount').html(result.count);
+          var crtprd = result.cartitm;
+          var crtlst = '';
+          for (pr in crtprd){
+            crtlst += '<li><div><img src="#'+crtprd[pr].image+'" alt=""></div><div class="item-details-cart"><h3 class="item-name-cart">'+crtprd[pr].qty+'x '+crtprd[pr].name+'</h3><h5>£'+crtprd[pr].subtotal+'</h5></div></li>';
+          }
+          console.log(crtlst);
+          $('#topcartprdlist').html(crtlst);
+          $('#topcrtsbttl').html('£'+result.cartsbtl);
+        });
+
+    }
+
+    function plusqty(val) {
+      var exsitval = $('#home_pro_qty_value_' + val).html();
+      var nowval = parseInt(exsitval) + 1;
+      $('#home_pro_qty_value_' + val).html(nowval);
+
+      $.get("welcome/updatecart/" + val + "/" + nowval)
+        .done(function (data) {
+          var result = JSON.parse(data);
+          $('#cartcount').html(result.count);
+          var crtprd = result.cartitm;
+          var crtlst = '';
+          for (pr in crtprd){
+            crtlst += '<li><div><img src="#'+crtprd[pr].image+'" alt=""></div><div class="item-details-cart"><h3 class="item-name-cart">'+crtprd[pr].qty+'x '+crtprd[pr].name+'</h3><h5>£'+crtprd[pr].subtotal+'</h5></div></li>';
+          }
+          console.log(crtlst);
+          $('#topcartprdlist').html(crtlst);
+          $('#topcrtsbttl').html('£'+result.cartsbtl);
+        });
+    }
+
+    
+
+  function closeshopclose(){
+    $('.closenowdiv').hide();
+    $('#resrtidiv').hide();
+    
+    $.get("welcome/allcoseedoff/")
+      .done(function (data) {
+
+      });
+    
+  }
+
+  function allclose(){
+    $('.closenowdiv').hide();
+  }
+
+  function openalleryalert(val){
+    swal("Allergy Info:", val);
+    swal({
+      title: "Allergy Info:",
+      text: val,
+      buttons: true,
+      dangerMode: true,
+      buttons: ["Close", "View Allergen Table"]
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        window.location='#';
+      } else {
+        
+        // swal("Your imaginary file is safe!");
+      }
+    });
+  }
+
+
+function getvrtnprice(val, prdid){
+    // console.log(prdid)
+    var vrtnid = '';
+    var vrtnprc = 0;
+    if(val){
+      vrtnid = val.split('|')[0];
+      vrtnprc = val.split('|')[1];
+      $('#selectedvrtnid').val(vrtnid);
+      $('#selectedvrtnprice').val(vrtnprc);
+      $('#itmsltdid').val(prdid);
+      gettotalofvroptn(prdid);
+    }
+  }
+
+  function getoptnprice(val, prdid){
+    var optnid = '';
+    var optnprc = 0;
+    var selectedoptid = $('#selectedoptid').val();
+    if(val){
+      optnid = val.split('|')[0];
+      optnprc = val.split('|')[1];
+
+      if(selectedoptid){
+        var toRemove = selectedoptid.indexOf(optnid) != -1; // true
+        if(toRemove){
+          var actlval = removeValue(selectedoptid, optnid, ',');
+          $('#selectedoptid').val(actlval);
+        } else {
+          $('#selectedoptid').val(selectedoptid+','+optnid);
+        }
+      } else {
+        $('#selectedoptid').val(optnid);
+      }
+      $('#selectedoptprice').val(optnprc);
+      $('#itmsltdid').val(prdid);
+
+      gettotalofvroptn(prdid);
+    }
+  }
+
+  function getmldlprice(val, prdid, mealdealid){
+    var mealdealids = $('#mldlflds_'+mealdealid).val();
+
+    var optnid = '';
+    var optnprc = 0;
+    var selectedmldlid = $('#selectedmldlid').val();
+    if(val){
+      optnid = val.split('|')[0];
+      optnprc = val.split('|')[1];
+
+      if(selectedmldlid){
+        var toRemove = selectedmldlid.indexOf(optnid) != -1; // true
+        if(toRemove){
+          var actlval = removeValue(selectedmldlid, optnid, ',');
+          $('#selectedmldlid').val(actlval);
+          console.log('Remove');
+          var newcnt = parseInt(mealdealids)-1;
+          $('#mldlflds_'+mealdealid).val(newcnt);
+        } else {
+          $('#selectedmldlid').val(selectedmldlid+','+optnid);
+          console.log('1st Added');
+          var newcnt = parseInt(mealdealids)+1;
+          $('#mldlflds_'+mealdealid).val(newcnt);
+        }
+      } else {
+        $('#selectedmldlid').val(optnid);
+        console.log('2nd Added');
+        var newcnt = parseInt(mealdealids)+1;
+        $('#mldlflds_'+mealdealid).val(newcnt);
+      }
+      $('#selectedmldlprice').val(optnprc);
+      $('#itmsltdid').val(prdid);
+
+      gettotalofvroptn(prdid);
+    }
+  }
+
+
+  function removeValue(list, value, separator) {
+    separator = separator || ",";
+    var values = list.split(separator);
+    for(var i = 0 ; i < values.length ; i++) {
+      if(values[i] == value) {
+        values.splice(i, 1);
+        return values.join(separator);
+      }
+    }
+    return list;
+  }
+
+
+  function gettotalofvroptn(prdid){
+    // console.log(prdid);
+    var vrtnid = $('#selectedvrtnid').val();
+    var optnids = $('#selectedoptid').val();
+    var mldlids = $('#selectedmldlid').val();
+    $.ajax({
+        type:'POST',
+        data:{vrtnid:vrtnid, optnids:optnids, mldlids:mldlids, prdid:prdid},
+        url:'#',
+        success:function(data){
+          // $('#vtr_xtr_'+prdid).show();
+          $('#vrnxtrtotalprc_'+prdid).html(''+data);
+          $('#totalitmprc').val(data);
+          // console.log(data);
+        },
+    });
+  }
+  function hidepopaert(){
+    $('.popalrtbg').hide();
+  }
+  </script>
+
+<!-- function added 8th november -->
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+<script>
+var setval = 0;
+var divWidth = ((6)-1)*260;
+$(window).load(function(){
+  var windwidth = $('#myTab').width();
+  console.log(windwidth);
+  if(divWidth < windwidth){
+    alert('ok');
+    $('.displaynopnoe').hide();
+  }
+  
+})
+ $('#nextimage').click(function(){
+  if(divWidth > setval){
+    setval = setval+(divWidth/6);
+  }
+    $('#myTab').scrollLeft(setval);
+ })
+ $('#previousimage').click(function(){
+  if(setval==divWidth){
+    setval = setval-(divWidth/2);
+  }
+  setval = setval-(divWidth/6);
+  if(setval<0){
+    setval = 0;
+   }
+    $('#myTab').scrollLeft(setval);
+ })
+</script>
+
+
+</body>
+    
+</body>
+</html>
